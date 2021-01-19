@@ -9,7 +9,9 @@
         "laravel/framework": "5.1.*",
         "guzzlehttp/guzzle": "^6.5",
         "maatwebsite/excel": "^2.1",
-        "yajra/laravel-datatables-oracle": "~6.1"
+        "yajra/laravel-datatables-oracle": "~6.0",
+        "nicolaslopezj/searchable": "^1.13",
+        "simplesoftwareio/simple-qrcode": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

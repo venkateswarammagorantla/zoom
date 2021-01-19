@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAjaxCrudsTable extends Migration
+class CreateDynamicFieldsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateAjaxCrudsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ajax_cruds', function (Blueprint $table) {
+        Schema::create('dynamic_fields', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ class CreateAjaxCrudsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ajax_cruds');
+        Schema::drop('dynamic_fields');
     }
 }

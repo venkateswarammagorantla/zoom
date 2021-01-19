@@ -12,6 +12,7 @@ class LoginController extends Controller
     {
 
       return view('auth.login');
+        //echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     }
 
     public function authenticate(Request $request)
@@ -21,13 +22,19 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home');
+            session()->put('email',$request->email);
+            if($request->id==1)
+                return redirect('sample_page');
+            else
+              return redirect()->intended('home');  
         }
 
         return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
+    
 
     public function logout() {
+        session()->forget('email');
       Auth::logout();
 
       return redirect('login');

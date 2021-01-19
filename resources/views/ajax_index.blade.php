@@ -7,7 +7,6 @@
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-  <meta name="csrf-token" content="{{ csrf_token() }}">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
  </head>
  <body>
@@ -60,6 +59,7 @@
              <input type="text" name="last_name" id="last_name" class="form-control" />
             </div>
            </div>
+           <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
            <div class="form-group">
             <label class="control-label col-md-4">Select Profile Image : </label>
             <div class="col-md-8">
@@ -102,8 +102,8 @@
 $(document).ready(function(){
 
  $('#user_table').DataTable({
-  processing: true,
-  serverSide: true,
+  //processing: true,
+  //serverSide: true,
   ajax:{
    url: "{{ route('ajax-crud.index') }}",
   },
@@ -144,9 +144,8 @@ $(document).ready(function(){
   if($('#action').val() == 'Add')
   {
    $.ajax({
-    
-    url:"{{('ajax-crud/store')}}",
-    method:"get",
+    url:"{{ route('ajax-crud.store') }}",
+    method:"POST",
     data: new FormData(this),
     contentType: false,
     cache:false,
@@ -255,3 +254,4 @@ $(document).ready(function(){
 
 });
 </script>
+

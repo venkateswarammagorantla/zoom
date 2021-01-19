@@ -71,8 +71,8 @@ class AjaxCrudController extends Controller
             'last_name'         =>  $request->last_name,
             'image'             =>  $new_name
         );
-
-        AjaxCrud::create($form_data);
+        $form_data->save();
+        //AjaxCrud::create($form_data);
 
         return response()->json(['success' => 'Data Added successfully.']);
     }

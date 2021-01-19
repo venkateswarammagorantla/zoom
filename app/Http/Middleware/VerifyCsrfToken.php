@@ -20,6 +20,17 @@ class VerifyCsrfToken extends BaseVerifier
         'import',
         'ajaxdata',
         'ajaxdata/getdata',
-        'ajaxdata/postdata'
+        'ajaxdata/postdata',
+        '/test*',
+        'ajax_login/check*',
+        'dynamic_fields*',
+        'dynamic_field/insert*',
+        'insertcourse*',
+        'topic/topicinsert*',
+        'class_timings*',
+        'full-text-search*',
+        'full-text-search/action*',
+        'full-text-search/normal-search*',
+        'newticket/insert*',
     ];
 }

@@ -94,9 +94,9 @@
   <td><?php echo $employee->designation;?></td>
   <td><?php echo $employee->salary;?></td>
 
-
+</tr>
  
-  <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="<?php echo $id.$employee->emp_id;?>">Edit</button>
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="<?php echo $id.$employee->emp_id;?>">Edit</button>
     <div class="modal" id="<?php echo $id1.$employee->emp_id;?>">
     <div class="modal-dialog">
       <div class="modal-content">

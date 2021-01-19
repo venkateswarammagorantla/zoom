@@ -14,8 +14,8 @@ class Sessioncontroller extends Controller
       if(session()->has('my_name'))
          {
             echo session()->get('my_name');
-         echo "<br>";
-         echo Hash::make(session()->get('my_name'));
+         //echo "<br>";
+         //echo Hash::make(session()->get('my_name'));
       }
       else
          echo 'No data in the session';
