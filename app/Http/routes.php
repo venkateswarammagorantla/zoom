@@ -160,8 +160,17 @@ Route::get('admin/fetch_ticket', 'AdminTicketController@fetch_ticket')->name('ad
 
   Route::get('risied_tickets', 'AdminTicketController@risied_tickets')->name('risied_tickets');
    Route::post('admin/close_ticket', 'AdminTicketController@close_ticket')->name('admin.close_ticket');
+//zoom integration
+  Route::get('CreateZoomMeeting', 'ZoomMeeting@CreateZoomMeeting')->name('CreateZoomMeeting');
+  Route::get('startzoomzeeting/select', 'Start_Zoom_Meeting@select')->name('startzoomzeeting.select');
+  Route::post('startzoomzeeting/meetinginwebsite', 'Start_Zoom_Meeting@meetinginwebsite')->name('startzoomzeeting.meetinginwebsite');
 
+  //Route::any('zoom/callback', 'ZoomCallBack@callback')->name('zoom.callback'); 
 
+//admin login
+Route::get('admin_login', 'AdminLogin@index');
+Route::post('admin/validate_login', 'AdminLogin@validate_login')->name('admin.validate_login');
+Route::get('admin/logout', 'AdminLogin@logout')->name('admin.logout');
 ?>
 
 

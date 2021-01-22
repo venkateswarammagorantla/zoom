@@ -32,5 +32,9 @@ class VerifyCsrfToken extends BaseVerifier
         'full-text-search/action*',
         'full-text-search/normal-search*',
         'newticket/insert*',
+        'admin_login*',
+        'admin/validate_login*',
+        'admin/logout*',
+        'startzoomzeeting/meetinginwebsite*'
     ];
 }

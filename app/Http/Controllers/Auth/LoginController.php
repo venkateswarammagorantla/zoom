@@ -22,6 +22,10 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            if(session()->has('admin_email'))
+            {
+               session()->forget('admin_email'); 
+            }
             session()->put('email',$request->email);
             if($request->id==1)
                 return redirect('sample_page');

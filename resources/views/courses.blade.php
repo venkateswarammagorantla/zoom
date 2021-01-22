@@ -160,5 +160,8 @@
 </table>
 <center><a href="<?php echo $_SERVER['HTTP_REFERER']?>"><span style="font-size: 20px;">&#x2190;</span>Go Back</a></center>
 @endif
+@if(session()->has('admin_email'))
+<a href="{{ route('admin.logout') }}">Admin Logout</a>
+@endif
   </div></div>
   
